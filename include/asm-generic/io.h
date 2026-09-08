@@ -71,7 +71,7 @@
  *     #include <...>
  *     ...
  */
-#if IS_ENABLED(CONFIG_TRACE_MMIO_ACCESS) && !(defined(__DISABLE_TRACE_MMIO__))
+#if IS_ENABLED(CONFIG_TRACE_MMIO_ACCESS) && !(defined(__DISABLE_TRACE_MMIO__)) && (!defined(MODULE) || defined(__ENABLE_TRACE_MMIO__))
 #include <linux/tracepoint-defs.h>
 
 DECLARE_TRACEPOINT(rwmmio_write);
